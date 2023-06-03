@@ -4,6 +4,19 @@ import { useEffect, useState } from 'react'
 import { ConnectWallet, useAddress, useSwitchChain, useNetworkMismatch, ChainId, useContract, MediaRenderer, useNFT, useChainId, useSDK } from "@thirdweb-dev/react"
 import { toast } from 'react-toastify'
 
+/*
+  /$$$$$$                /$$$$$$$                                                  
+ /$$__  $$              | $$__  $$                                                 
+| $$  \__/ /$$  /$$$$$$ | $$  \ $$ /$$$$$$  /$$    /$$ /$$$$$$   /$$$$$$   /$$$$$$$
+|  $$$$$$ |__/ /$$__  $$| $$$$$$$//$$__  $$|  $$  /$$//$$__  $$ |____  $$ /$$_____/
+ \____  $$ /$$| $$  \__/| $$____/| $$  \ $$ \  $$/$$/| $$  \ $$  /$$$$$$$|  $$$$$$ 
+ /$$  \ $$| $$| $$      | $$     | $$  | $$  \  $$$/ | $$  | $$ /$$__  $$ \____  $$
+|  $$$$$$/| $$| $$      | $$     |  $$$$$$/   \  $/  |  $$$$$$/|  $$$$$$$ /$$$$$$$/
+ \______/ | $$|__/      |__/      \______/     \_/    \______/  \_______/|_______/ 
+     /$$  | $$                                                                     
+    |  $$$$$$/                                                                     
+     \______/                                                                      
+*/
 export default function Home(){
   const address = useAddress()
   const [loading, setLoading] = useState(true)
@@ -17,9 +30,10 @@ export default function Home(){
   const isMismatched = useNetworkMismatch()
 
   // Campos a Serem Personalizados
-    const nameProjet = "BootCamp iBEED"  // Nome do seu Projeto
-    const { contract } = useContract("0xE21964C19fb32f02e474ae83b126B87E6D1C2301") // Endereço da sua Coleção
+    const nameProjet = "Collection Cleanning Portion Water"  // Nome do seu Projeto
+    const { contract } = useContract("0x72147D7716A8CfEDb41FeAEaD590A37e43C661C9") // Endereço da sua Coleção
     const tokenId = 0 // Token ID que você quer liberar o Mint
+    const tokenId = 1 // Token ID que você quer liberar o Mint
   // -------------------------------
 
   const { data: nft, isLoading, error } = useNFT(contract, `${tokenId}`)
@@ -65,7 +79,7 @@ export default function Home(){
     .then(function(myValue: any){
       const receipt = myValue
       totalMinted()
-      toast.success(`Parabéns você mintou seu ${titleNFT}`)
+      toast.success(`Parabéns! Você acabou de mintar com sucesso o seu ${titleNFT}`)
 
     }).catch(function(error: any){
       console.log(error)
@@ -133,7 +147,7 @@ export default function Home(){
         </div>
 
         <footer>
-          <p>Copyrights © {nameProjet} 2023</p>
+          <p>Copyrights © {nameProjet} 2023. Criado por SjrPovoas</p>
         </footer>
       </main>      
     </div>
