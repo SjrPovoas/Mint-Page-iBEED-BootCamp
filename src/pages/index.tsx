@@ -32,7 +32,6 @@ export default function Home(){
   // Campos a Serem Personalizados
     const nameProjet = "Collection Cleanning Portion Water"  // Nome do seu Projeto
     const { contract } = useContract("0x72147D7716A8CfEDb41FeAEaD590A37e43C661C9") // Endereço da sua Coleção
-    const tokenId = 0 // Token ID que você quer liberar o Mint
     const tokenId = 1 // Token ID que você quer liberar o Mint
   // -------------------------------
 
