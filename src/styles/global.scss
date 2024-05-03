@@ -24,6 +24,11 @@
 
 body{
   background-color: black;
+  min-height: 100vh;
+}
+
+html{
+  min-height: 100vh;
 }
 
 p, h1, h2, h3, ul, li{
@@ -32,6 +37,7 @@ p, h1, h2, h3, ul, li{
 
 body, input, textarea, select, button{
   font: 400 1rem 'Poppins', sans-serif;
+  
 }
 
 button{
